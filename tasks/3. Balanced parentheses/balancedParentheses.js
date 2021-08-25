@@ -1,5 +1,8 @@
 export function areParenthesesBalanced(inputString) {
   // TODO: write your code here
+    if(inputString.length === 0 ) {
+        return true;
+    }
     let bracketStack = [];
     let bracketMap = {
         '(': ')',
@@ -11,7 +14,7 @@ export function areParenthesesBalanced(inputString) {
         if (inputString[i] === '(' || inputString[i] === '{' || inputString[i] === '[' ) {
             bracketStack.push(inputString[i]);
         }
-        else {
+        else if(inputString[i] === ')' || inputString[i] === '}' || inputString[i] === ']') {
             //if inputString[i] is a closing brace
             //then check if the element before is the correct open brace
             let last = bracketStack.pop();

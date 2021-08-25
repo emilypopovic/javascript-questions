@@ -1,15 +1,17 @@
 export function getFizzBuzzUntil(n) {
   // TODO: write your code here
-    if(n%3 === 0 && n%5 === 0) {
-        return 'FizzBuzz';
+    let result = [];
+
+    for (let i = 1; i <= n; i++) {
+        if (i % 3 === 0 && i % 5 === 0) {
+            result.push('FizzBuzz');
+        } else if (i % 3 === 0) {
+            result.push('Fizz');
+        } else if (i % 5 === 0) {
+            result.push('Buzz');
+        } else {
+            result.push(i);
+        }
     }
-    else if(n%3 === 0) {
-        return 'Fizz';
-    }
-    else if(n%5 === 0) {
-        return 'Buzz';
-    }
-    else {
-        return n;
-    }
+    return result;
 }
