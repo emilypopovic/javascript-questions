@@ -12,6 +12,8 @@ export default function(center, radius) {
     },
     includes(Point) {
       // TODO: write your code here
+      return (Point.x - center.x) * (Point.x - center.x) +
+          (Point.y - center.y) * (Point.y - center.y) <= radius * radius;
     }
   }
 }
